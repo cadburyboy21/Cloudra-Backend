@@ -34,6 +34,9 @@ if (process.env.NODE_ENV === 'development') {
     app.use(morgan('dev'));
 }
 
+app.get('/', (req, res) => {
+    res.send('API is running...');
+});
 // Mount routers
 app.use('/api/auth', auth);
 app.use('/api/files', files);
